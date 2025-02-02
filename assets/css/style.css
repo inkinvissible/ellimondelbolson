@@ -1907,3 +1907,50 @@ p {
   background-color: #FDE801;
   height: 5em;
 }
+
+/* Prices */
+table {
+  background-color: #fff;
+}
+thead {
+  background-color: #007bff;
+  color: #fff;
+}
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+/* Estilos para dispositivos móviles: convertir la tabla en "tarjetas" */
+@media (max-width: 767.98px) {
+  table thead {
+    display: none;
+  }
+  table, table tbody, table tr, table td {
+    display: block;
+    width: 100%;
+  }
+  table tr {
+    margin-bottom: 1rem;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+  }
+  table td {
+    position: relative;
+    padding-left: 50%;
+    text-align: right;
+    border: none;
+    border-bottom: 1px solid #dee2e6;
+  }
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 45%;
+    padding-left: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+  table td:last-child {
+    border-bottom: 0;
+  }
+}

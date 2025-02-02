@@ -1,13 +1,39 @@
-<!doctype html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Document</title>
-</head>
-<body>
-<h1>Test</h1>
+    <!doctype html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Document</title>
+        <!--====== Bootstrap CSS ======-->
+        <link rel="stylesheet" href="assets/css/bootstrap.4.5.2.min.css">
+        <link rel="stylesheet" href="assets/css/style.css">
 
-<script src="assets/js/prices.js"></script>
-</body>
-</html>
+    </head>
+    <body>
+    <h1>Test</h1>
+    <!--Prices table -->
+    <div class="container-fluid py-5">
+        <div class="price-table">
+            <div class="table-responsive">
+                <table class="table table-striped table-hover mb-0">
+                    <thead>
+                    <tr>
+                        <th>Tarifa</th>
+                        <th>Pasajeros</th>
+                        <th>Días</th>
+                        <th>Válido hasta</th>
+                    </tr>
+                    </thead>
+                    <tbody id="tableBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="assets/js/vendor/modernizr-3.7.1.min.js"></script>
+    <script src="assets/js/bootstrap.4.5.2.min.js"></script>
+    <script src="assets/js/prices.js"></script>
+    </body>
+    </html>
