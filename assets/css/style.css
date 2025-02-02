@@ -1962,4 +1962,15 @@ p {
   margin-left: auto;
   margin-right: auto;
   height: 30rem;  /* Mantiene la relación de aspecto */
+
+  max-width: 80%; /* Ajusta el tamaño */
+  max-height: 500px; /* Evita que sean demasiado altas */
+  margin: auto;
+}
+.carousel-item{
+  transition: transform 0.3s ease-in-out; /* Reduce el tiempo de transición */
+}
+.carousel-inner{
+  width: 100%;
+  height: 100%;
 }
