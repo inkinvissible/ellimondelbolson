@@ -27,11 +27,8 @@ const formatPrices = (csvData) => {
 
 const createTable = (pricesJson) => {
     const tbody = document.getElementById('tableBody');
-
-    // Limpia cualquier contenido previo en el tbody
     tbody.innerHTML = '';
 
-    // Si no hay datos, se puede mostrar un mensaje o simplemente salir
     if (!pricesJson.length) {
         tbody.innerHTML = `
             <tr>
@@ -41,18 +38,45 @@ const createTable = (pricesJson) => {
         return;
     }
 
-    // Recorremos cada objeto del arreglo para crear las filas
     pricesJson.forEach(item => {
         const tr = document.createElement('tr');
-        // Por cada propiedad del objeto, se crea una celda (td)
-        Object.keys(item).forEach(key => {
-            const td = document.createElement('td');
-            td.textContent = item[key] || '';
-            tr.appendChild(td);
-        });
+
+        // 1. Columna Tarifa
+        const tdTarifa = document.createElement('td');
+        tdTarifa.setAttribute('data-label', 'Tarifa');
+        const originalPrice = parseFloat(item.tarifa) || 0;
+        const discount = parseFloat(item.descuento) || 0;
+        if (discount > 0) {
+            const discountedPrice = originalPrice - discount;
+            tdTarifa.innerHTML = `<del style="color:red;">$${originalPrice.toFixed(2)}</del> $${discountedPrice.toFixed(2)}`;
+        } else {
+            tdTarifa.textContent = `$${originalPrice.toFixed(2)}`;
+        }
+        tr.appendChild(tdTarifa);
+
+        // 2. Columna Pasajeros
+        const tdPax = document.createElement('td');
+        tdPax.setAttribute('data-label', 'Pasajeros');
+        tdPax.textContent = item.pax || '';
+        tr.appendChild(tdPax);
+
+        // 3. Columna Días
+        const tdDias = document.createElement('td');
+        tdDias.setAttribute('data-label', 'Días');
+        tdDias.textContent = item.dias || '';
+        tr.appendChild(tdDias);
+
+        // 4. Columna Válido hasta
+        const tdValido = document.createElement('td');
+        tdValido.setAttribute('data-label', 'Válido hasta');
+        tdValido.textContent = item.valido || '';
+        tr.appendChild(tdValido);
+
         tbody.appendChild(tr);
     });
 };
+
+
 
 /**
  * Realiza la petición para obtener el CSV, lo convierte a JSON y crea la tabla.
