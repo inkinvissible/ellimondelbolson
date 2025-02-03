@@ -2072,3 +2072,24 @@ p {
 	flex-direction: row;
 	justify-content: space-evenly;
 }
+/*responsive design*/
+/*sección departamentos*/
+@media screen and (max-width: 480px) {
+  * {
+    max-width: 100%;
+    box-sizing: border-box;
+    outline: 1px solid red;
+}
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+  .departamentos-container{
+    display: flex;
+    row-gap: 2em;
+    flex-direction: column;
+  }
+  .titleDepartamentos{
+    text-align: center;
+  }
+}
