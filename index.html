@@ -474,6 +474,53 @@
 
     <!--====== BLOG PART ENDS ======-->
 
+    <div class="container my-5">
+        <h2 class="mb-4 text-center">Consulta las tarifas vigentes</h2>
+        <p class="text-center col-12">Nuestros precios están actualizados para la temporada actual. Estos precios son en <strong>DÓLARES</strong>. Ingrese la cantidad de personas y la cantidad de días para poder acceder a las tarifas. </p>
+
+
+        <!-- Formulario de entrada -->
+        <form id="reservationForm" class="row g-3 mt-2">
+            <div class="col-md-4">
+                <label for="inputFechaEntrada" class="form-label">Fecha de Entrada</label>
+                <input type="date" class="form-control" id="inputFechaEntrada" required>
+            </div>
+            <div class="col-md-4">
+                <label for="inputFechaSalida" class="form-label">Fecha de Salida</label>
+                <input type="date" class="form-control" id="inputFechaSalida" required>
+            </div>
+            <div class="col-md-4">
+                <label for="inputPasajeros" class="form-label">Cantidad de Pasajeros</label>
+                <input type="number" min="1" class="form-control" id="inputPasajeros" placeholder="Ej. 1, 2, 3" required>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn pricesButtons mt-4">Calcular</button>
+            </div>
+        </form>
+
+        <!-- Espacio para mostrar mensajes de error -->
+        <div id="alertContainer" class="mt-3"></div>
+
+        <!-- Card para mostrar la información de la estadía -->
+        <div id="resultCard" class="card mt-5 d-none">
+            <!-- Imagen de la card (puedes reemplazar la URL por una de tu elección) -->
+            <img src="./assets/images/galería/cama-img1.jpg" class="card-img-top" alt="Departamento de 1 dormitorio">
+            <div class="card-body">
+                <h5 class="card-title">Departamento de 1 dormitorio</h5>
+                <p class="card-text">
+                    <strong>Cantidad de Personas:</strong> <span id="paxDisplay"></span><br>
+                    <strong>Noches:</strong> <span id="noches"></span><br>
+                    <strong>Precio por Noche:</strong> <span id="tarifaDiaria"></span>
+                </p>
+                <p class="final-price mt-4">
+                    Total: <span id="tarifaTotal"></span>
+                </p>
+                <!-- Botón Reservar con id para identificarlo -->
+                <a href="#" id="reserveBtn" class="btn pricesButtons mt-2">Reservar</a>
+            </div>
+        </div>
+    </div>
+
     <!--====== CONTACTO PART START ======-->
 
     <section id="contacto" class="contact_area pt-120 pb-130">
@@ -631,6 +678,7 @@
     <script src="assets/js/main.js"></script>
 
     <script src="assets/js/promos.js"></script>
+    <script src="assets/js/prices.js"></script>
 
 </body>
 
