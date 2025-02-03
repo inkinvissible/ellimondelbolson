@@ -149,10 +149,10 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
     const tarifaOriginal = parseFloat(pricing.tarifa) || 0;
     const descuento = parseFloat(pricing.descuento) || 0;
     let tarifaDiaria = tarifaOriginal;
-    let tarifaDiariaDisplay = `$${tarifaDiaria.toFixed(2)}`;
+    let tarifaDiariaDisplay = `US$${tarifaDiaria.toFixed(2)}`;
     if (descuento > 0) {
         tarifaDiaria = tarifaOriginal - descuento;
-        tarifaDiariaDisplay = `<del class="text-danger">$${tarifaOriginal.toFixed(2)}</del> $${tarifaDiaria.toFixed(2)}`;
+        tarifaDiariaDisplay = `<del class="text-danger">US$${tarifaOriginal.toFixed(2)}</del> US$${tarifaDiaria.toFixed(2)}`;
     }
 
     // Calcular tarifa total
@@ -161,7 +161,7 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
     // Actualizar la información en la card
     document.getElementById('noches').textContent = noches;
     document.getElementById('tarifaDiaria').innerHTML = tarifaDiariaDisplay;
-    document.getElementById('tarifaTotal').textContent = `$${tarifaTotal.toFixed(2)}`;
+    document.getElementById('tarifaTotal').textContent = `US$${tarifaTotal.toFixed(2)}`;
     document.getElementById('paxDisplay').textContent = pasajeros;
 
     // Guardar los datos de la reserva para usarlos en el botón Reservar
@@ -170,8 +170,8 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
         fechaSalida,
         pasajeros,
         noches,
-        tarifaDiaria: `$${tarifaDiaria.toFixed(2)}`,
-        tarifaTotal: `$${tarifaTotal.toFixed(2)}`,
+        tarifaDiaria: `US$${tarifaDiaria.toFixed(2)}`,
+        tarifaTotal: `US$${tarifaTotal.toFixed(2)}`,
         // También se guarda la fecha de validez (opcional, para uso futuro)
         valido: pricing.valido
     };
@@ -206,7 +206,7 @@ document.getElementById('reserveBtn').addEventListener('click', function(event) 
     // Construir el mensaje para WhatsApp
     const message = `Hola!, estoy interesado en reservar.%0ASomos ${reservationData.pasajeros} pasajeros y queremos alojarnos en El Limón de El Bolsón. Serían ${reservationData.noches} noches, desde el ${reservationData.fechaEntrada} hasta ${reservationData.fechaSalida}.%0AEl precio por noche es de ${reservationData.tarifaDiaria} y el precio total es de ${reservationData.tarifaTotal}.`;
 
-    const whatsappURL = `https://api.whatsapp.com/send?phone=5491159439209&text=${message}`;
+    const whatsappURL = `https://api.whatsapp.com/send?phone=5492944118890&text=${message}`;
 
     // Redirigir al usuario a WhatsApp
     window.open(whatsappURL, '_blank');
