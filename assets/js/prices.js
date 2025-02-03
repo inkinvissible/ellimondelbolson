@@ -61,7 +61,8 @@ const showAlert = (message, type = 'danger') => {
     const alertContainer = document.getElementById('alertContainer');
     alertContainer.innerHTML = `
         <div class="alert alert-${type} alert-dismissible fade show" role="alert">
-          ${message}
+          ${message} 
+          <a href="https://api.whatsapp.com/send?phone=5492944118890">Contactanos por este medio y te ayudamos: +54 9 294 411-8890</a>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
       `;
