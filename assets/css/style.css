@@ -1896,7 +1896,38 @@ p {
   right: 10px;
   top: 10px;
 }
+/* Precios */
+/* Estilos para el formulario */
+#reservationForm {
+  background-color: #FDE801;
+  border-radius: 16px;
+  padding: 20px;
+}
+/* Estilos para la card de resultado */
+#resultCard {
+  max-width: 500px;
+  margin: auto;
+}
+#resultCard .final-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.pricesButtons{
+  transition: 0.5s ease-in-out all;
+  background-color: #9CC18D;
+  color: #000;
+  border-radius: 4px;
+  padding: 7px 14px;
 
+}
+.pricesButtons:hover{
+  transition: 0.5s ease-in-out all;
+  background-color: #77976b;
+  transform: scale(1.03);
+  color: #000;
+  border-radius: 4px;
+  padding: 7px 14px;
+}
 /*===== BACK TO TOP =====*/
 .back-to-top {
   font-size: 20px;
