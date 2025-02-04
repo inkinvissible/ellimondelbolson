@@ -2104,7 +2104,7 @@ p {
 /*sección departamentos*/
 @media screen and (max-width: 480px) {
   * {
-    max-width: 100%;
+
     box-sizing: border-box;
     
 }
