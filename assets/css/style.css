@@ -2175,3 +2175,11 @@ p {
         height: 30px;
     }
 }
+@media (min-width: 350px) {
+    .titleDepartamentos{
+        justify-content: center;
+    }
+    .departamentos-container{
+        width: 30em;
+    }
+}
