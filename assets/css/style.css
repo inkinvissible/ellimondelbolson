@@ -2175,7 +2175,7 @@ p {
         height: 30px;
     }
 }
-@media (min-width: 350px) {
+@media (max-width: 360px) {
     .titleDepartamentos{
         justify-content: center;
     }
